@@ -1,3 +1,4 @@
+import 'package:appointment_application/components/login_form.dart';
 import 'package:appointment_application/utils/config.dart';
 import 'package:appointment_application/utils/text.dart';
 import 'package:flutter/material.dart';
@@ -14,37 +15,41 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     Config().init(context);
     return Scaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 15,
-          vertical: 15
-        ),
-        child: SafeArea(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                AppText.enText['wecome_text']!,
-                style: const TextStyle(
-                  fontSize: 36,
-                  fontWeight: FontWeight.bold
+        body: Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+      child: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              AppText.enText['welcome_text']!,
+              style: const TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+            ),
+            Config.spaceSmall,
+            Text(
+              AppText.enText['signIn_text']!,
+              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            Config.spaceSmall,
+            const MyLoginForm(),
+            Config.spaceSmall,
+            Center(
+              child: TextButton(
+                onPressed: () {},
+                child: Text(
+                  AppText.enText['forgot_password']!,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.black
+                  ),
                 ),
               ),
-              Config.spaceSmall,
-              Text(
-                AppText.enText['signIn_text']!,
-                style: const TextStyle(
-                  fontSize: 16,
-                  fontWeight: FontWeight.bold
-                ),
-                
-              ),
-              Config.spaceSmall,
-            ],
-          ),
+            )
+          ],
         ),
-      )
-    );
+      ),
+    ));
   }
 }
