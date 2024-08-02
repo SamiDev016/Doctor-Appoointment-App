@@ -1,4 +1,5 @@
 import 'package:appointment_application/components/login_form.dart';
+import 'package:appointment_application/components/social_button.dart';
 import 'package:appointment_application/utils/config.dart';
 import 'package:appointment_application/utils/text.dart';
 import 'package:flutter/material.dart';
@@ -40,12 +41,57 @@ class _AuthPageState extends State<AuthPage> {
                 child: Text(
                   AppText.enText['forgot_password']!,
                   style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black
-                  ),
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
                 ),
               ),
+            ),
+            const Spacer(),
+            Center(
+              child: Text(
+                AppText.enText['social_login']!,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.grey.shade500,
+                ),
+              ),
+            ),
+
+            Config.spaceSmall,
+
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                SocialButton(social: "facebook"),
+                SocialButton(social: "google"),
+                SocialButton(social: "github"),
+              ],
+            ),
+            Config.spaceSmall,
+
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                AppText.enText['signUp_text']!,
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.normal,
+                  color: Colors.grey.shade500,
+                ),
+                  
+                ),
+                const Text(
+                  " Sign Up",
+                  style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                ),
+                )
+              ],
             )
           ],
         ),
