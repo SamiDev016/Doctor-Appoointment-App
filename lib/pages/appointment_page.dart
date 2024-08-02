@@ -1,4 +1,4 @@
-import 'package:appointment_application/components/appointment_card.dart';
+
 import 'package:appointment_application/utils/config.dart';
 import 'package:flutter/material.dart';
 
@@ -159,7 +159,9 @@ class _AppointmentPageState extends State<AppointmentPage> {
                                   _schedule["doctor_profile"]
                                 ),
                               ),
-                              Config.spaceSmall,
+                              const SizedBox(
+                                width: 10,
+                              ),
 
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,

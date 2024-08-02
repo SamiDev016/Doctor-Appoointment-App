@@ -121,7 +121,9 @@ class _HomePageState extends State<HomePage> {
                 Config.spaceSmall,
                 Column(
                   children: List.generate(8, (index) {
-                    return const DoctorCard();
+                    return const DoctorCard(
+                      routeName: "doc_details",
+                    );
                   }),
                 )
               ],
