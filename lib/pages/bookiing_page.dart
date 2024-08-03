@@ -51,9 +51,9 @@ class _BookingPageState extends State<BookingPage> {
           _isWeekEnd
               ? SliverToBoxAdapter(
                   child: Container(
-                    padding: EdgeInsets.symmetric(horizontal: 10, vertical: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
                     alignment: Alignment.center,
-                    child: Text(
+                    child: const Text(
                       "Weekend is not Available , Select another Date",
                       style: TextStyle(
                         fontSize: 18,
@@ -88,7 +88,7 @@ class _BookingPageState extends State<BookingPage> {
                         ),
                         alignment: Alignment.center,
                         child: Text(
-                          "${index + 9}:00 ${index + 9 > 11 ? "PM" : "AM"}",
+                          "${index + 8}:00 ${index + 10 > 11 ? "PM" : "AM"}",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color:
@@ -107,7 +107,9 @@ class _BookingPageState extends State<BookingPage> {
                 width: double.infinity,
                 title: "Make Appointment",
                 disable: _timeSelected && _dateSelected ? false : true,
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.of(context).pushNamed("success_booking");
+                },
               ),
             ),
           )
